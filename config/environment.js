@@ -1,7 +1,13 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+  var ENV = {
+      firebase: {
+        apiKey: 'xyz',
+        authDomain: 'busapp-35bb0.firebaseapp.com',
+        databaseURL: 'https://busapp-35bb0.firebaseio.com',
+        storageBucket: 'busapp-35bb0.appspot.com',
+      },
     modulePrefix: 'bus-app',
     environment,
     rootURL: '/',
