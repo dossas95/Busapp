@@ -4,8 +4,10 @@
   </header>
   <div class="header">
     <p>Indique el número de cédula que desea usar</p>
-    <p>{{input type="text"}}</p>
-    {{input type="button" value="Buscar usuario"  class="menu" }}
+    <p>{{input type="text" value=code}}</p>
+    <strong><button    class="menu" {{action 'wrongField'}} >Buscar cliente</button>
+    	<p>Prueba:{{prueba}}</p>
+    </strong>
   </div>
 
   <div class="header">
