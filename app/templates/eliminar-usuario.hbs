@@ -9,6 +9,9 @@
     </form>
     <form class="form" id='segundo' hidden=true>
         <p>Nombre de usuario</p>
+        {{#each cedulas as | cedula |}}
+            <p>{{cedula.nombre}}</p>
+        {{/each}}
         <p>Fotografia de usuario</p>
         <button class="mid" {{action 'eliminar'}}>Eliminar</button>
     </form>

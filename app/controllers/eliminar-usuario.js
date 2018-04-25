@@ -11,6 +11,28 @@ export default Controller.extend({
             }else{
                 document.getElementById('segundo').hidden = false;
                 document.getElementById('primero').hidden = true;
+                const cedulas = this.store.query('operador', {
+                    orderBy: 'cedula',
+                    equalTo: parseInt(cedula)
+                  }).then((cedulas) => {
+                    if (!cedulas || cedulas.content.length === 0){
+                      alert("usuario no registrado");
+                    }
+                    else{
+                        this.set('cedulas', cedulas);
+                    }
+                  });
+            
+            
+                                
+                
+            }
+        },
+        eliminar:function(){
+            var x = confirm("Desea eliminar el usuario?");
+            if(x){
+                document.getElementById('segundo').hidden = true;
+                document.getElementById('primero').hidden = false;
             }
         }
         
