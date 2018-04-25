@@ -14,22 +14,24 @@ export default Controller.extend({
            		this.set("prueba",a);
            	}
            	else {
-           		code=parseInt(code);
-           		var get=this.store.query('operador', {
+           		var cedulas=this.store.query('operador', {
            			orderBy:'cedula',
-           			equalTo: code}).then((get) => {
-
-           				
-           				if (!get || get.content.length === 0) {
+           			equalTo: parseInt(code)
+           		}).then((cedulas) => {
+           				if (!cedulas || cedulas.content.length === 0) {
            				alert("Usuario no registrado");
            				}
            				else {
-           					document.getElementById("cc").value=code;
            					document.getElementById("editar").hidden=false;
            					document.getElementById("inicio").hidden=true;
+           					this.set('cedulas',cedulas);
            				}
            			});
 	}
-			}
+			},
+			finaled() {
+		    alert("Usuario editado correctamente");
+		    location.href="/editar-usuario";
+      }
 	}
 });
