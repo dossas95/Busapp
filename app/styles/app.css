@@ -34,3 +34,9 @@
   border-radius: 1.5em;
   text-align: center;
 }
+
+.form{
+  font-style: italic;
+  text-align: center;
+  font-size: larger;
+}

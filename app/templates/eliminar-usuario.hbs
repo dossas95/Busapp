@@ -1,1 +1,18 @@
-{{outlet}}
+<body bgcolor="#696969">
+    <header class="header">
+        <h1> Eliminar usuario </h1>
+    </header>
+    <form class="form" id='primero'>
+        <p>Digite cédula del usuario</p>
+        <p>{{input type="text" id="cc"}}</p>
+        <button class="mid" {{action 'buscar'}}>Buscar</button>
+    </form>
+    <form class="form" id='segundo' hidden=true>
+        <p>Nombre de usuario</p>
+        {{#each cedulas as | cedula |}}
+            <p>{{cedula.nombre}}</p>
+        {{/each}}
+        <p>Fotografia de usuario</p>
+        <button class="mid" {{action 'eliminar'}}>Eliminar</button>
+    </form>
+</body>
