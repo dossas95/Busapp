@@ -2,7 +2,7 @@
   <header class="header">
     <h1> Editar usuario </h1>
   </header>
-  <div class="header">
+  <div class="header" id="inicio">
     <p>Indique el número de cédula que desea usar</p>
     <p>{{input type="text" value=code}}</p>
     <strong><button    class="menu" {{action 'wrongField'}} >Buscar cliente</button>
@@ -13,6 +13,33 @@
   <div class="header">
     
   </div>
+	<form id="editar" hidden=true>
+    <input type="radio" value="operador">Operador
+    <input type="radio" value="conductor">Conductor<br>
+    <p> </p>
+    <input class="campo" type="text" id="nombre" onfocus="if (this.value=='Nombre completo') this.value = ' '" onblur="if (this.value==' ') this.value = 'Nombre completo'" value="Nombre completo" size="80">
+    <input class="campo" type="text" id="gs" onfocus="if (this.value=='Grupo Sanguíneo (A,B,O,AB)') this.value = ' '" onblur="if (this.value==' ') this.value = 'Grupo Sanguíneo (A,B,O,AB)'" value="Grupo Sanguíneo (A,B,O,AB)" size="80">
+    <p> </p>
+    <input class="campo" type="text" id="cc" onfocus="if (this.value=='Cédula') this.value = ' '" onblur="if (this.value==' ') this.value = 'Cédula'" value=code size="80" disabled="true">
+    <input class="campo" type="text" id="rh" onfocus="if (this.value=='Rh (+ , -)') this.value = ' '" onblur="if (this.value==' ') this.value = 'Rh (+ , -)'" value="Rh (+ , -)" size="80">
+    <p> </p>
+    <input class="campo" type="text" id="pass" onfocus="if (this.value=='Contraseña') this.value = ''; this.type='password'" onblur="if (this.value=='') {this.value = 'Contraseña'; this.type = 'text';} else{this.type='password'}" value="Contraseña" size="80">
+    <input class="campo" type="text" id="nc" onfocus="if (this.value=='Número de contacto') this.value = ' '" onblur="if (this.value==' ') this.value = 'Número de contacto'" value="Número de contacto" size="80">
+    <p> </p>
+    <input class="campo" type="text" id="fn" onfocus="if (this.value=='Fecha de nacimiento') this.value = ' '" onblur="if (this.value==' ') this.value = 'Fecha de nacimiento'" value="Fecha de nacimiento" size="80">
+    Fotografía: <input name="fichero" id="foto" type="file">
+    <p> </p>
+    <input class="campo" type="text" id="dire" onfocus="if (this.value=='Dirección') this.value = ' '" onblur="if (this.value==' ') this.value = 'Dirección'" value="Dirección" size="80">
+    <p> </p>
+    <input class="campo" type="text" id="tel" onfocus="if (this.value=='Teléfono') this.value = ' '" onblur="if (this.value==' ') this.value = 'Teléfono'" value="Teléfono" size="80">
+    <div class="menu">
+      <button class="mid" {{action 'registrar'}}>Finalizar edición</button>
+    </div>
+  </form>
 </body>
+
+  
+
+
 
 {{outlet}}
