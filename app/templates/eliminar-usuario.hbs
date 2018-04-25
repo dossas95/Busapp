@@ -2,9 +2,14 @@
     <header class="header">
         <h1> Eliminar usuario </h1>
     </header>
-    <form class="form">
+    <form class="form" id='primero'>
         <p>Digite cédula del usuario</p>
-        <p>{{input type="text"}}</p>
-        <button type="btn_delete" value="Buscar usuario"  class="btn_delete" {{action 'openForm' book}}>Buscar usuario</button>        
+        <p>{{input type="text" id="cc"}}</p>
+        <button class="mid" {{action 'buscar'}}>Buscar</button>
+    </form>
+    <form class="form" id='segundo' hidden=true>
+        <p>Nombre de usuario</p>
+        <p>Fotografia de usuario</p>
+        <button class="mid" {{action 'eliminar'}}>Eliminar</button>
     </form>
 </body>
