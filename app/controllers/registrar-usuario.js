@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions: {
-    registrar() {
+    registrar: function() {
 
       const nombre = document.getElementById('nombre').value;
       const grupoSanguineo = document.getElementById('gs').value;
@@ -15,17 +15,34 @@ export default Controller.extend({
       const direccion = document.getElementById('dire').value;
       const telefono = document.getElementById('tel').value;
 
+
       if (nombre == 'Nombre completo' || grupoSanguineo == 'Grupo Sanguíneo (A,B,O,AB)' || cedula == 'Cédula' || rh == 'Rh (+ , -)' ||
           contrasena == 'Contraseña' || numeroContacto == 'Número de contacto' || fechaNacimiento == 'Fecha de nacimiento' ||
           direccion == 'Dirección' || telefono == 'Teléfono'){
 
             alert("Es necesario que llene todos los campos del formulario");
       }
-      else if(grupoSanguineo != 'A' || grupoSanguineo != 'B' || grupoSanguineo != 'O' || grupoSanguineo != 'AB' ||
-              rh != '+' || rh != '-' || isNaN(cedula) || isNaN(numeroContacto) || isNaN(telefono)){
+      else if(isNaN(cedula) || isNaN(numeroContacto) || isNaN(telefono)){
 
             alert("Datos no válidos, verifique la información registrada");
             location.href="/registrar-usuario";
+      }
+      else{
+        var newOp = this.store.createRecord('operador', {
+          nombre: nombre,
+          cedula: cedula,
+          contrasena: contrasena,
+          fecnac: fechaNacimiento,
+          dir: direccion,
+          telefono: telefono,
+          grupsan: grupoSanguineo,
+          rh: rh,
+          numcont: numeroContacto,
+          foto: "foto",
+        });
+        newOp.save();
+        alert("Usuario guardado con éxito");
+        location.ref="/registrar-usuario";
       }
 
 
