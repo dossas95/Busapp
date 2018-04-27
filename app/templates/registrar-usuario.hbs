@@ -3,8 +3,8 @@
     <h1> Registrar usuario </h1>
   </header>
   <form>
-    <input type="radio" value="operador">Operador
-    <input type="radio" value="conductor">Conductor<br>
+    <input type="radio" name="tipo" value="operador" checked>Operador
+    <input type="radio" name="tipo" value="conductor">Conductor<br>
     <p> </p>
     <input class="campo" type="text" id="nombre" onfocus="if (this.value=='Nombre completo') this.value = ' '" onblur="if (this.value==' ') this.value = 'Nombre completo'" value="Nombre completo" size="80">
     <input class="campo" type="text" id="gs" onfocus="if (this.value=='Grupo Sanguíneo (A,B,O,AB)') this.value = ' '" onblur="if (this.value==' ') this.value = 'Grupo Sanguíneo (A,B,O,AB)'" value="Grupo Sanguíneo (A,B,O,AB)" size="80">
@@ -16,7 +16,7 @@
     <input class="campo" type="text" id="nc" onfocus="if (this.value=='Número de contacto') this.value = ' '" onblur="if (this.value==' ') this.value = 'Número de contacto'" value="Número de contacto" size="80">
     <p> </p>
     <input class="campo" type="text" id="fn" onfocus="if (this.value=='Fecha de nacimiento') this.value = ' '" onblur="if (this.value==' ') this.value = 'Fecha de nacimiento'" value="Fecha de nacimiento" size="80">
-    Fotografía: <input name="fichero" id="foto" type="file">
+    <input class="campo" type="text" id="foto" onfocus="if (this.value=='Ingrese el URL de la fotografía') this.value = ' '" onblur="if (this.value==' ') this.value = 'Ingrese el URL de la fotografía'" value="Ingrese el URL de la fotografía" size="80">
     <p> </p>
     <input class="campo" type="text" id="dire" onfocus="if (this.value=='Dirección') this.value = ' '" onblur="if (this.value==' ') this.value = 'Dirección'" value="Dirección" size="80">
     <p> </p>
@@ -30,5 +30,4 @@
     </div>
   </form>
 </body>
-
 {{outlet}}

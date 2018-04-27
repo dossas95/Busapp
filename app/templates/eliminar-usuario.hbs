@@ -3,16 +3,16 @@
         <h1> Eliminar usuario </h1>
     </header>
     <form class="form" id='primero'>
-        <p>Digite cédula del usuario</p>
-        <p>{{input type="text" id="cc"}}</p>
-        <button class="mid" {{action 'buscar'}}>Buscar</button>
+        <p>Introduzca la cédula del usuario que desea eliminar</p>
+        <p>{{input class="campo" type="text" id="cc" size="40"}}</p>
+        <button class="mid" {{action 'buscar'}}>Buscar usuario</button>
     </form>
     <form class="form" id='segundo' hidden=true>
-        <p>Nombre de usuario</p>
+        <p class="header">El usuario que desea eliminar es:</p>
         {{#each cedulas as | cedula |}}
-            <p>{{cedula.nombre}}</p>
+            <p class="header">{{cedula.nombre}}</p>
+        <img src="{{cedula.foto}}" width="150" height="150" align=center><br>
         {{/each}}
-        <p>Fotografia de usuario</p>
-        <button class="mid" {{action 'eliminar'}}>Eliminar</button>
+        <button class="mid" {{action 'eliminar'}}>Confirmar eliminación</button>
     </form>
 </body>

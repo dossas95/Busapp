@@ -30,6 +30,8 @@
 }
 
 .campo{
+  margin: 10px;
+  padding: 10px;
   font-style: italic;
   border-radius: 1.5em;
   text-align: center;

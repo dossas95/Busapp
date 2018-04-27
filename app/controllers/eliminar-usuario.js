@@ -4,7 +4,7 @@ export default Controller.extend({
     actions:{
         buscar:function(){
             const cedula = document.getElementById('cc').value;
-           
+
             if(isNaN(cedula)){
                 alert("Datos equivocados, debe ingresar una cedula valida");
                 location.href="/eliminar-usuario";
@@ -22,21 +22,34 @@ export default Controller.extend({
                         this.set('cedulas', cedulas);
                     }
                   });
-            
-            
-                                
-                
             }
         },
         eliminar:function(){
-            var x = confirm("Desea eliminar el usuario?");
-            if(x){
-                document.getElementById('segundo').hidden = true;
-                document.getElementById('primero').hidden = false;
+          const cedula = document.getElementById('cc').value;
+
+          const cedulas = this.store.query('operador', {
+            orderBy: 'cedula',
+            equalTo: parseInt(cedula)
+          }).then((cedulas) => {
+            if (cedulas.content.length !== 0) {
+              let u = cedulas.objectAt(0);
+              u.destroyRecord();
+              alert("Usuario eliminado con éxito");
+              location.href = "/eliminar-usuario";
             }
+          });
+
+          const cedulas1 = this.store.query('conductor', {
+            orderBy: 'cedula',
+            equalTo: parseInt(cedula)
+          }).then((cedulas1) => {
+            if (cedulas1.content.length !== 0) {
+              let u = cedulas.objectAt(0);
+              u.destroyRecord();
+              alert("Usuario eliminado con éxito");
+              location.href = "/eliminar-usuario";
+            }
+          });
         }
-        
     }
-
-
 });
