@@ -6,7 +6,7 @@ export default Controller.extend({
 
       const nombre = document.getElementById('nombre').value;
       const grupoSanguineo = document.getElementById('gs').value;
-      const cedula = document.getElementById('cc').value;
+      const ced = document.getElementById('cc').value;
       const rh = document.getElementById('rh').value;
       const contrasena = document.getElementById('pass').value;
       const numeroContacto = document.getElementById('nc').value;
@@ -15,34 +15,49 @@ export default Controller.extend({
       const direccion = document.getElementById('dire').value;
       const telefono = document.getElementById('tel').value;
 
-
-      if (nombre == 'Nombre completo' || grupoSanguineo == 'Grupo Sanguíneo (A,B,O,AB)' || cedula == 'Cédula' || rh == 'Rh (+ , -)' ||
+      if (nombre == 'Nombre completo' || grupoSanguineo == 'Grupo Sanguíneo (A,B,O,AB)' || ced == 'Cédula' || rh == 'Rh (+ , -)' ||
           contrasena == 'Contraseña' || numeroContacto == 'Número de contacto' || fechaNacimiento == 'Fecha de nacimiento' ||
           direccion == 'Dirección' || telefono == 'Teléfono'){
 
             alert("Es necesario que llene todos los campos del formulario");
       }
-      else if(isNaN(cedula) || isNaN(numeroContacto) || isNaN(telefono)){
+      else if(isNaN(ced) || isNaN(numeroContacto) || isNaN(telefono)){
 
             alert("Datos no válidos, verifique la información registrada");
             location.href="/registrar-usuario";
       }
       else{
-        var newOp = this.store.createRecord('operador', {
-          nombre: nombre,
-          cedula: cedula,
-          contrasena: contrasena,
-          fecnac: fechaNacimiento,
-          dir: direccion,
-          telefono: telefono,
-          grupsan: grupoSanguineo,
-          rh: rh,
-          numcont: numeroContacto,
-          foto: "foto",
+        const cedulas = this.store.query('operador', {
+          orderBy: 'cedula',
+          equalTo: parseInt(ced)
+        }).then((cedulas) => {
+          if (!cedulas || cedulas.content.length === 0){
+            var newOp = this.store.createRecord('operador', {
+              nombre: nombre,
+              cedula: ced,
+              contrasena: contrasena,
+              fecnac: fechaNacimiento,
+              dir: direccion,
+              telefono: telefono,
+              grupsan: grupoSanguineo,
+              rh: rh,
+              numcont: numeroContacto,
+              foto: "foto",
+            });
+            newOp.save();
+            alert("Usuario guardado con éxito");
+            location.href="/registrar-usuario";
+          }
+          else{
+            var opc = confirm("El usuario ya se encuentra registrado en el sistema. ¿Desea editarlo?");
+            if(opc){
+              location.href="/editar-usuario";
+            }
+            else{
+              location.href="/registrar-usuario";
+            }
+          }
         });
-        newOp.save();
-        alert("Usuario guardado con éxito");
-        location.ref="/registrar-usuario";
       }
 
 

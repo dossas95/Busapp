@@ -23,6 +23,10 @@
     <input class="campo" type="text" id="tel" onfocus="if (this.value=='Teléfono') this.value = ' '" onblur="if (this.value==' ') this.value = 'Teléfono'" value="Teléfono" size="80">
     <div class="menu">
       <button class="mid" {{action 'registrar'}}>Finalizar registro</button>
+      {{#each cedulas as | cedula |}}
+        {{cedula.nombre}}
+        {{cedula.telefono}}
+      {{/each}}
     </div>
   </form>
 </body>
