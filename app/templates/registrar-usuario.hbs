@@ -15,12 +15,12 @@
     <input class="campo" type="text" id="pass" onfocus="if (this.value=='Contraseña') this.value = ''; this.type='password'" onblur="if (this.value=='') {this.value = 'Contraseña'; this.type = 'text';} else{this.type='password'}" value="Contraseña" size="80">
     <input class="campo" type="text" id="nc" onfocus="if (this.value=='Número de contacto') this.value = ' '" onblur="if (this.value==' ') this.value = 'Número de contacto'" value="Número de contacto" size="80">
     <p> </p>
-    <input class="campo" type="text" id="fn" onfocus="if (this.value=='Fecha de nacimiento') this.value = ' '" onblur="if (this.value==' ') this.value = 'Fecha de nacimiento'" value="Fecha de nacimiento" size="80">
+    <input class="campo" type="text" id="tel" onfocus="if (this.value=='Teléfono') this.value = ' '" onblur="if (this.value==' ') this.value = 'Teléfono'" value="Teléfono" size="80">
     <input class="campo" type="text" id="foto" onfocus="if (this.value=='Ingrese el URL de la fotografía') this.value = ' '" onblur="if (this.value==' ') this.value = 'Ingrese el URL de la fotografía'" value="Ingrese el URL de la fotografía" size="80">
     <p> </p>
     <input class="campo" type="text" id="dire" onfocus="if (this.value=='Dirección') this.value = ' '" onblur="if (this.value==' ') this.value = 'Dirección'" value="Dirección" size="80">
-    <p> </p>
-    <input class="campo" type="text" id="tel" onfocus="if (this.value=='Teléfono') this.value = ' '" onblur="if (this.value==' ') this.value = 'Teléfono'" value="Teléfono" size="80">
+    <p>Seleccione la fecha de nacimiento
+      <input class="campo" type="date" id="fn"></p>
     <div class="menu">
       <button class="mid" {{action 'registrar'}}>Finalizar registro</button>
       {{#each cedulas as | cedula |}}
