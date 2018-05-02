@@ -16,7 +16,18 @@ export default Controller.extend({
                     equalTo: parseInt(cedula)
                   }).then((cedulas) => {
                     if (!cedulas || cedulas.content.length === 0){
-                      alert("usuario no registrado");
+                      const cedulas1 = this.store.query('conductor', {
+                        orderBy: 'cedula',
+                        equalTo: parseInt(cedula)
+                      }).then((cedulas1) => {
+                        if (!cedulas1 || cedulas1.content.length === 0){
+                          alert("usuario no registrado");
+                          location.href="/eliminar-usuario";
+                        }
+                        else{
+                          this.set('cedulas', cedulas1);
+                        }
+                      });
                     }
                     else{
                         this.set('cedulas', cedulas);
@@ -44,7 +55,7 @@ export default Controller.extend({
             equalTo: parseInt(cedula)
           }).then((cedulas1) => {
             if (cedulas1.content.length !== 0) {
-              let u = cedulas.objectAt(0);
+              let u = cedulas1.objectAt(0);
               u.destroyRecord();
               alert("Usuario eliminado con éxito");
               location.href = "/eliminar-usuario";

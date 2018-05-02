@@ -23,12 +23,12 @@
     <input class="campo" type="password" id="pass" value={{cedula.contrasena}} size="80">
     <input class="campo" type="text" id="nc" value={{cedula.numcont}} size="80">
     <p> </p>
-    <input class="campo" type="text" id="fn" value={{cedula.fecnac}} size="80">
+    <input class="campo" type="text" id="tel" value={{cedula.telefono}} size="80">
     <input class="campo" type="text" id="foto" value={{cedula.foto}} size="80">
     <p> </p>
     <input class="campo" type="text" id="dire" value={{cedula.dir}} size="80">
-    <p> </p>
-    <input class="campo" type="text" id="tel" value={{cedula.telefono}} size="80">
+    <p>Seleccione la fecha de nacimiento
+      <input class="campo" type="date" id="fn" value={{cedula.fecnac}}></p>
     <div class="menu">
       <button class="mid" {{action 'finaled'}}>Finalizar edición</button>
     </div>

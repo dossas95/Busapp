@@ -94,7 +94,7 @@ export default Controller.extend({
           u.set('rh', rh);
           u.set('telefono', telefono);
           cedulas1.save();
-          alert("Operador guardado con éxito");
+          alert("Conductor guardado con éxito");
           location.href = "/editar-usuario";
         }
       });
