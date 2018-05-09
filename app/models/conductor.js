@@ -3,7 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   nombre: DS.attr('string'),
   cedula: DS.attr('number'),
-  contraseña: DS.attr('string'),
+  contrasena: DS.attr('string'),
   fecnac: DS.attr('string'),
   dir: DS.attr('string'),
   telefono: DS.attr('number'),

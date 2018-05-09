@@ -6,17 +6,13 @@
     <p>Indique el número de cédula que desea usar</p>
     <p>{{input type="text" class='campo' value=code}}</p>
     <strong><button    class="mid" {{action 'wrongField'}} >Buscar cliente</button>
-    	
+
     </strong>
   </div>
-
   <div class="header">
-
   </div>
 	<form id="editar" hidden=true>
-  {{#each cedulas as | cedula|}}
-    <input type="radio" value="operador">Operador
-    <input type="radio" value="conductor">Conductor<br>
+    {{#each cedulas as | cedula|}}
     <p> </p>
     <input class="campo" type="text" id="nombre" value={{cedula.nombre}} size="80">
     <input class="campo" type="text" id="gs" value={{cedula.grupsan}} size="80">
@@ -27,21 +23,16 @@
     <input class="campo" type="password" id="pass" value={{cedula.contrasena}} size="80">
     <input class="campo" type="text" id="nc" value={{cedula.numcont}} size="80">
     <p> </p>
-    <input class="campo" type="text" id="fn" value={{cedula.fecnac}} size="80">
-    Fotografía: <input name="fichero" id="foto" type="file">
+    <input class="campo" type="text" id="tel" value={{cedula.telefono}} size="80">
+    <input class="campo" type="text" id="foto" value={{cedula.foto}} size="80">
     <p> </p>
     <input class="campo" type="text" id="dire" value={{cedula.dir}} size="80">
-    <p> </p>
-    <input class="campo" type="text" id="tel" value={{cedula.telefono}} size="80">
+    <p>Seleccione la fecha de nacimiento
+      <input class="campo" type="date" id="fn" value={{cedula.fecnac}}></p>
     <div class="menu">
       <button class="mid" {{action 'finaled'}}>Finalizar edición</button>
     </div>
   {{/each}}
   </form>
 </body>
-
-
-
-
-
 {{outlet}}
