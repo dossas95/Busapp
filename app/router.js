@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('registrar-usuario');
   this.route('editar-usuario');
   this.route('eliminar-usuario');
+  this.route('registrar-bus');
+  this.route('editar-bus');
+  this.route('eliminar-bus');
 });
 
 export default Router;
