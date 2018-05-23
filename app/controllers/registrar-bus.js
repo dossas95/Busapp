@@ -27,11 +27,7 @@ export default Controller.extend({
             equalTo: placa
           }).then((placas) => {
             if (!placas || placas.content.length === 0) {
-              const placas1 = this.store.query('bus', {
-                orderBy: 'placa',
-                equalTo: placa
-              }).then((placas1) => {
-                if (!placas1 || placas1.content.length === 0) {
+              
                   var newOp = this.store.createRecord('bus', {
                    placa: placa,
                    marca:marca,
@@ -51,17 +47,9 @@ export default Controller.extend({
                     location.href = "/registrar-bus";
                   }
                 }
-              });
-            }
-            else {
-              var opc = confirm("El usuario ya se encuentra registrado en el sistema. ¿Desea editarlo?");
-              if (opc) {
-                location.href = "/editar-usuario";
-              }
-              else {
-                location.href = "/registrar-usuario";
-              }
-            }
+              
+            
+            
           });
         
         
