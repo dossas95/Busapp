@@ -61,7 +61,32 @@ export default Controller.extend({
             }).then((data) => {
                 this.set('email', '');
                 this.set('password', '');
-                controller.transitionToRoute('administrador');
+                /*const cedulas = this.store.query('operador',{
+                    orderBy: 'cedula',
+                    equalTo: parseInt(cedula)
+                  }).then((cedulas) => {
+                    if (cedulas){
+
+                    }else{
+                      const cedulas1 = this.store.query('administrador',{
+                        orderBy: 'cedula',
+                        equalTo: parseInt(cedula)
+                      }).then((cedulas1) =>{
+                          if(!cedulas1 || cedulas1.content.length === 0){
+                              const cedulas2 = this.store.query('conductor', {
+                                orderBy: 'cedula',
+                                equalTo: parseInt(cedula)
+                              }).then((cedulas2) =>{
+                                  if(!cedulas2 || cedulas2.content.lenght === 0){
+                                      alert("no se encuentra el uduario en la bd");
+                                  }
+                              })
+                          }
+                      })                      
+                    }
+                  });
+                */
+               controller.transitionToRoute('administrador');
                 
             },(error) => {
                 const email = this.get('email');
@@ -74,7 +99,30 @@ export default Controller.extend({
                     }, 1000);*/
                     alert("por favor ingrese ambos campos");
                 }else if(email){
+                    alert("pendiente por buscar");
                     /*codigo para identificar que el usuario ingresado este registrado*/
+                    /*const cedulas = this.store.query('operador', {
+                        orderBy: 'cedula',
+                        equalTo: parseInt(cedula)
+                      }).then((cedulas) => {
+                        if (!cedulas || cedulas.content.length === 0){
+                          const cedulas1 = this.store.query('administrador',{
+                            orderBy: 'cedula',
+                            equalTo: parseInt(cedula)
+                          }).then((cedulas1) =>{
+                              if(!cedulas1 || cedulas1.content.length === 0){
+                                  const cedulas2 = this.store.query('conductor', {
+                                    orderBy: 'cedula',
+                                    equalTo: parseInt(cedula)
+                                  }).then((cedulas2) =>{
+                                      if(!cedulas2 || cedulas2.content.lenght === 0){
+                                          alert("no se encuentra el uduario en la bd");
+                                      }
+                                  })
+                              }
+                          })                      
+                        }
+                      });*/
                 }
             });
         },

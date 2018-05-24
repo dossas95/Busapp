@@ -10,18 +10,19 @@
 
   <div class="menu">
   {{#link-to 'generar-reporte'}}
-      <strong class="mid">Generar Reporte</strong>
+      <strong class="der">Generar Reporte</strong>
   {{/link-to}}
-    
-  {{#link-to 'revisar-ruta'}}
-    <strong class="mid">Editar usuario</strong>
-  {{/link-to}}
-<!--
-  {{#link-to 'eliminar-usuario'}}
-      <strong class="izq">Eliminar usuario</strong>
-  {{/link-to}}
-  -->
-  </div>
-</body>
 
+  {{#link-to 'revisar-ruta'}}
+    <strong class="izq">Revisar Ruta</strong>
+  {{/link-to}}
+  </div>
+  <header class="header"></header>
+  <div class="menu"></div>
+  
+  <header class="header">
+    <h1> Revisar Ruta </h1>
+  </header>
+    
+</body>
 {{outlet}}

@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('administrador');
   this.route('operador');
   this.route('conductor');
+  this.route('revisar-ruta');
 });
 
 export default Router;
