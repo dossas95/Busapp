@@ -4,14 +4,14 @@ export default Controller.extend({
   actions: {
     registrar: function() {
 
-      const placa = document.getElementById('placa').value;
+      const plac = document.getElementById('placa').value;
       const marca = document.getElementById('marca').value;
       const modelo = document.getElementById('modelo').value;
       const fechaR = document.getElementById('fr').value;
 
     
 
-      if (placa == 'Placa del vehículo' || marca == 'Marca' || modelo == 'Modelo' ) {
+      if (plac == 'Placa del vehículo' || marca == 'Marca' || modelo == 'Modelo' ) {
 
         alert("Es necesario que llene todos los campos del formulario");
       }
@@ -24,12 +24,12 @@ export default Controller.extend({
        
           const placas = this.store.query('bus', {
             orderBy: 'placa',
-            equalTo: placa
+            equalTo: plac
           }).then((placas) => {
             if (!placas || placas.content.length === 0) {
               
                   var newOp = this.store.createRecord('bus', {
-                   placa: placa,
+                   placa: plac,
                    marca:marca,
                    modelo:modelo,
                    fechaRevision:fechaR
