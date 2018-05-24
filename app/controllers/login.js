@@ -68,15 +68,13 @@ export default Controller.extend({
                 const password = this.get('password');
                 //Validaciones de campos vacios
                 if (!email || !password) {
-                    this.set('isEmpty', true);
+                    /*this.set('isEmpty', true);
                     setTimeout(() => {
                         this.set('isEmpty', false);
-                    }, 1000);
-                } else {
-                    this.set('isError', true);
-                    setTimeout(() => {
-                        this.set('isError', false);
-                    }, 1000);
+                    }, 1000);*/
+                    alert("por favor ingrese ambos campos");
+                }else if(email){
+                    /*codigo para identificar que el usuario ingresado este registrado*/
                 }
             });
         },
