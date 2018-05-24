@@ -14,6 +14,10 @@ Router.map(function() {
   this.route('registrar-bus');
   this.route('editar-bus');
   this.route('eliminar-bus');
+  this.route('generar-reporte');
+  this.route('administrador');
+  this.route('operador');
+  this.route('conductor');
 });
 
 export default Router;
