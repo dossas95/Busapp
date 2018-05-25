@@ -4,7 +4,7 @@ export default Controller.extend({
   actions: {
     registrar: function() {
 
-      const plac = document.getElementById('placa').value;
+      const plac = document.getElementById('placa').value.trim();
       const marca = document.getElementById('marca').value;
       const modelo = document.getElementById('modelo').value;
       const fechaR = document.getElementById('fr').value;
