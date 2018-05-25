@@ -4,8 +4,8 @@ export default Controller.extend({
     actions:{
         buscar:function(){
             const cedula = document.getElementById('cc').value;
-            if(placa==null||placa==""){
-              alert("Es necesario que especifique la placa del bus que desea eliminar");  
+            if(cedula==null||cedula==""){
+              alert("Es necesario que especifique la cedula del usuario que desea eliminar");  
             }
             else if(isNaN(cedula)){
                 alert("Datos equivocados, debe ingresar una cedula valida");
@@ -24,7 +24,7 @@ export default Controller.extend({
                         equalTo: parseInt(cedula)
                       }).then((cedulas1) => {
                         if (!cedulas1 || cedulas1.content.length === 0){
-                          alert("usuario no registrado");
+                          alert("El usuario no se encuentra en la base de datos");
                           location.href="/eliminar-usuario";
                         }
                         else{
