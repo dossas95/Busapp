@@ -1,1 +1,41 @@
-{{outlet}}
+<head>
+  <header class="header">
+    <h1> BusApp </h1>
+  </header>
+</head>
+<body bgcolor="#696969">
+  <div class="header">
+    <h2>Bienvenido Operador</h2>
+  </div>
+
+  <div class="menu">
+  {{#link-to 'registrar-bus'}}
+      <strong class="der">Registrar bus</strong>
+  {{/link-to}}
+
+  {{#link-to 'editar-bus'}}
+    <strong class="mid">Editar bus</strong>
+  {{/link-to}}
+
+  {{#link-to 'eliminar-bus'}}
+      <strong class="izq">Eliminar bus</strong>
+  {{/link-to}}
+  </div>
+    <header class="header">
+        <h1> Eliminar bus </h1>
+    </header>
+    <form class="form" id='primero'>
+        <p>Introduzca la placa del bus que desea eliminar</p>
+        <p>{{input class="campo" type="text" id="plac" size="40"}}</p>
+        <button class="mid" {{action 'buscar'}}>Buscar bus</button>
+    </form>
+    <form class="form" id='segundo' hidden=true>
+        <p class="header">El bus que desea eliminar es:</p>
+        {{#each placas as | placa |}}
+            <p class="header">{{placa.marca}}</p>
+            <p class="header">{{placa.modelo}}</p>
+        
+        {{/each}}
+        <button class="mid" {{action 'eliminar'}}>Confirmar eliminación</button>
+    </form>
+</body>

@@ -4,11 +4,14 @@ export default Controller.extend({
     actions:{
         buscar:function(){
             const cedula = document.getElementById('cc').value;
-
-            if(isNaN(cedula)){
+            if(placa==null||placa==""){
+              alert("Es necesario que especifique la placa del bus que desea eliminar");  
+            }
+            else if(isNaN(cedula)){
                 alert("Datos equivocados, debe ingresar una cedula valida");
                 location.href="/eliminar-usuario";
-            }else{
+            }
+            else{
                 document.getElementById('segundo').hidden = false;
                 document.getElementById('primero').hidden = true;
                 const cedulas = this.store.query('operador', {
