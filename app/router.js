@@ -19,6 +19,7 @@ Router.map(function() {
   this.route('operador');
   this.route('conductor');
   this.route('revisar-ruta');
+  this.route('registrar-ruta');
 });
 
 export default Router;
