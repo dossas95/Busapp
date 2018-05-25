@@ -19,7 +19,11 @@ Router.map(function() {
   this.route('operador');
   this.route('conductor');
   this.route('revisar-ruta');
+<<<<<<< HEAD
   this.route('registrar-ruta');
+=======
+  this.route('revisar-reporte');
+>>>>>>> 1e0dc8425bb77a80fc91b4093093c0256d1a5af4
 });
 
 export default Router;
