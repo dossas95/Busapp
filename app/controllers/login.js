@@ -51,16 +51,33 @@ export default Controller.extend({
     }*/
     actions: {
         login: function (provider) {
-            //$('spinner').show();
             let controller = this;
             this.get('session').open('firebase', {
                 provider: provider,
-                email: this.get('email') || '',
+                email: this.get('email').concat("@gmail.com") || '',
                 password: this.get('password') || '',
 
             }).then((data) => {
+                const email = this.get('email').concat("@gmail.com");
                 this.set('email', '');
                 this.set('password', '');
+                if(email === 'administrador@gmail.com'){
+                    controller.transitionToRoute('administrador');
+                }else if(email === 'conductor@gmail.com'){
+                    
+                    /*const cedulas = this.store.query('operador',{
+                        orderBy: 'cedula',
+                        equalTo: parseInt(email)
+                      }).then((cedulas) => {
+                        if (cedulas){
+                            controller.transitionToRoute('conductor');
+                        }
+                        });
+                        */
+                    controller.transitionToRoute('conductor');
+                }else{
+                    controller.transitionToRoute('operador');
+                }
                 /*const cedulas = this.store.query('operador',{
                     orderBy: 'cedula',
                     equalTo: parseInt(cedula)
@@ -86,10 +103,10 @@ export default Controller.extend({
                     }
                   });
                 */
-               controller.transitionToRoute('administrador');
+               
                 
             },(error) => {
-                const email = this.get('email');
+                const email = this.get('email').concat("@gmail.com");
                 const password = this.get('password');
                 //Validaciones de campos vacios
                 if (!email || !password) {
@@ -100,6 +117,7 @@ export default Controller.extend({
                     alert("por favor ingrese ambos campos");
                 }else if(email){
                     alert("pendiente por buscar");
+                    alert(email);
                     /*codigo para identificar que el usuario ingresado este registrado*/
                     /*const cedulas = this.store.query('operador', {
                         orderBy: 'cedula',

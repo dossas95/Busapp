@@ -20,6 +20,11 @@
   {{#link-to 'eliminar-bus'}}
       <strong class="izq">Eliminar bus</strong>
   {{/link-to}}
+
+  {{#link-to 'revisar-reporte'}}
+      <strong class="izq">Revisar Reporte</strong>
+  {{/link-to}}
+  
   </div>
     <header class="header">
         <h1> Registrar bus </h1>
@@ -27,16 +32,18 @@
   <form>
     <br>
     <p> 
-    <input class="campo" type="text" id="placa" onfocus="if (this.value=='Placa del vehículo') this.value = ' '" onblur="if (this.value==' ') this.value = 'Placa del vehículo'" value="Placa del vehículo" size="80">
+      <input class="campo" type="text" id="placa" onfocus="if (this.value=='Placa del vehículo') this.value = ' '" onblur="if (this.value==' ') this.value = 'Placa del vehículo'" value="Placa del vehículo" size="80">
     </p>
     <p> 
-    <input class="campo" type="text" id="marca" onfocus="if (this.value=='Marca') this.value = ' '" onblur="if (this.value==' ') this.value = 'Marca'" value="Marca" size="80">
-    </p> <p> 
-  <input class="campo" type="text" id="modelo" onfocus="if (this.value=='Modelo') this.value = ' '" onblur="if (this.value==' ') this.value = 'Modelo'" value="Modelo" size="80">
+      <input class="campo" type="text" id="marca" onfocus="if (this.value=='Marca') this.value = ' '" onblur="if (this.value==' ') this.value = 'Marca'" value="Marca" size="80">
+    </p> 
+    <p> 
+      <input class="campo" type="text" id="modelo" onfocus="if (this.value=='Modelo') this.value = ' '" onblur="if (this.value==' ') this.value = 'Modelo'" value="Modelo" size="80">
     </p>
     
     <p>Seleccione la fecha de la última revisión
-      <input class="campo" type="date" id="fr"></p>
+      <input class="campo" type="date" id="fr">
+    </p>
     <div class="menu">
       <button class="mid" {{action 'registrar'}}>Finalizar registro</button>
       
