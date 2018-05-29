@@ -115,9 +115,8 @@ export default Controller.extend({
                         this.set('isEmpty', false);
                     }, 1000);*/
                     alert("por favor ingrese ambos campos");
-                }else if(email){
-                    alert("el usuario no se encuentra en la bd");
-                    alert(email);
+                }else {
+                    alert("el usuario no se encuentra en la bd o algun campo es incorrecto");
                     /*codigo para identificar que el usuario ingresado este registrado*/
                     /*const cedulas = this.store.query('operador', {
                         orderBy: 'cedula',
