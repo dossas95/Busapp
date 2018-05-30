@@ -28,6 +28,16 @@
       Su ruta asignada es:
     </strong>
 
+    <form class="form">
+        {{#each rutas as | ruta |}}
+            <div class="reporte">
+                <p class="header">{{ruta.nombre}}</p>
+                <p class="header">{{ruta.tiempomedio}}</p>     
+            </div>  
+            <p></p>
+        {{/each}}
+        <button class="mid" {{action 'mostrar'}}>Mostrar Rutas</button>
+    </form>
   </div>
     
 </body>

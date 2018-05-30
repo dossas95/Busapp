@@ -33,6 +33,16 @@
     <header class="header">
         <h1> Revisar Reporte </h1>
     </header>
-  
+    <form class="form">
+        {{#each reportes as | reporte |}}
+            <div class="reporte">
+                <p class="header">{{reporte.descripcion}}</p>
+                <button class="mid" {{action 'solucionar'}}>{{reporte.estado}}</button>
+            </div>  
+            <p></p>
+        {{/each}}
+        <button class="mid" {{action 'mostrar'}}>Mostrar Reportes</button>
+    </form>
 </body>
+
 {{outlet}}

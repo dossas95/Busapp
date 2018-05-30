@@ -4,7 +4,7 @@ export default Controller.extend({
     actions:{
         generar: function(){
             const descripcion = document.getElementById("cuadroTexto").value;
-            const estado = "por solucionar";
+            const est = "por solucionar";
             if(descripcion==null||descripcion==""){
                 alert("Es necesario que indique una breve descripción del reporte");  
             }else{
@@ -14,7 +14,7 @@ export default Controller.extend({
                 }).then((reporte) => {
                     var newOp = this.store.createRecord('reporte', {
                             descripcion: descripcion,
-                            estado: estado
+                            estado: est
                         });
                         newOp.save();
                         alert("Reporte guardado con éxito");
