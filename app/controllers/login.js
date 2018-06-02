@@ -59,11 +59,12 @@ export default Controller.extend({
 
             }).then((data) => {
                 const email = this.get('email').concat("@gmail.com");
+                const ced = this.get('mail');
                 this.set('email', '');
                 this.set('password', '');
                 if(email === 'administrador@gmail.com'){
                     controller.transitionToRoute('administrador');
-                }else if(email === 'conductor@gmail.com'){
+                //}else if(email === 'conductor@gmail.com'){
                     
                     /*const cedulas = this.store.query('operador',{
                         orderBy: 'cedula',
@@ -74,37 +75,32 @@ export default Controller.extend({
                         }
                         });
                         */
-                    controller.transitionToRoute('conductor');
+                  //  controller.transitionToRoute('conductor');
                 }else{
-                    controller.transitionToRoute('operador');
-                }
-                /*const cedulas = this.store.query('operador',{
+                    //controller.transitionToRoute('operador');
+                //}
+                const cedulas = this.store.query('operador',{
                     orderBy: 'cedula',
-                    equalTo: parseInt(cedula)
+                    equalTo: parseInt(ced)
                   }).then((cedulas) => {
                     if (cedulas){
-
+                        alert("encontrado");
+                        mail: "oeprador@gmail.com";
+                        controller.transitionToRoute('operador');
                     }else{
-                      const cedulas1 = this.store.query('administrador',{
+                      const cedulas1 = this.store.query('conductor',{
                         orderBy: 'cedula',
-                        equalTo: parseInt(cedula)
+                        equalTo: parseInt(ced)
                       }).then((cedulas1) =>{
-                          if(!cedulas1 || cedulas1.content.length === 0){
-                              const cedulas2 = this.store.query('conductor', {
-                                orderBy: 'cedula',
-                                equalTo: parseInt(cedula)
-                              }).then((cedulas2) =>{
-                                  if(!cedulas2 || cedulas2.content.lenght === 0){
-                                      alert("no se encuentra el uduario en la bd");
-                                  }
-                              })
+                          if(cedulas){
+                            alert("encontrado");
+                            mail: "conductor@gmail.com";
+                            controller.transitionToRoute('conductor');
                           }
-                      })                      
+                      });                      
                     }
-                  });
-                */
-               
-                
+                  });  
+                }  
             },(error) => {
                 const email = this.get('email').concat("@gmail.com");
                 const password = this.get('password');

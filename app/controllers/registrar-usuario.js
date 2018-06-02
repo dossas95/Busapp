@@ -16,8 +16,6 @@ export default Controller.extend({
       const direccion = document.getElementById('dire').value;
       const telefono = document.getElementById('tel').value;
 
-      alert(fechaNacimiento);
-
       if (nombre == 'Nombre completo' || grupoSanguineo == 'Grupo Sanguíneo (A,B,O,AB)' || ced == 'Cédula' || rh == 'Rh (+ , -)' ||
         contrasena == 'Contraseña' || numeroContacto == 'Número de contacto' || fechaNacimiento == 'Fecha de nacimiento' ||
         direccion == 'Dirección' || telefono == 'Teléfono') {
