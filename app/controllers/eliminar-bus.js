@@ -16,7 +16,7 @@ export default Controller.extend({
                   }).then((placas) => {
                    
                         if (!placas || placas.content.length === 0){
-                          alert("El bus no se encuentra en la base de datos");
+                          alert("El asdasdasd bus no se encuentra en la base de datos");
                           location.href="/eliminar-bus";
                         }
                         else{
