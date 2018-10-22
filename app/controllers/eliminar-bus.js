@@ -6,7 +6,7 @@ export default Controller.extend({
             const placa = document.getElementById('plac').value;
 
             if(placa==null||placa==""){
-                alert("Es demasiado necesario que especifique la placa del bus que desea eliminar");
+                alert("Es aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaademasiado necesario que especifique la placa del bus que desea eliminar");
                 
             }else{
                
