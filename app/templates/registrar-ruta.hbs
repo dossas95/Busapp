@@ -1,0 +1,50 @@
+<head>
+  <header class="header">
+    <h1> BusApp </h1>
+  </header>
+</head>
+<body bgcolor="#696969">
+  <div class="header">
+    <h2>Bienvenido Operador</h2>
+  </div>
+
+  <div class="menu">
+  
+  {{#link-to 'registrar-bus'}}
+      <strong class="der">Registrar bus</strong>
+  {{/link-to}}
+
+  {{#link-to 'editar-bus'}}
+    <strong class="mid">Editar bus</strong>
+  {{/link-to}}
+
+  {{#link-to 'eliminar-bus'}}
+      <strong class="izq">Eliminar bus</strong>
+  {{/link-to}}
+  
+  {{#link-to 'registrar-ruta'}}
+      <strong class="mid">Registrar ruta</strong>
+  {{/link-to}}
+  
+  {{#link-to 'revisar-reporte'}}
+      <strong class="izq">Revisar Reporte</strong>
+  {{/link-to}}
+  </div>
+    <header class="header">
+        <h1> Registrar Ruta </h1>
+    </header>
+  <form>
+    <br>
+    <p> 
+    <input class="campo" type="text" id="nombre" onfocus="if (this.value=='Nombre de la ruta') this.value = ' '" onblur="if (this.value==' ') this.value = 'Nombre de la ruta'" value="Nombre de la ruta" size="80">
+    </p>
+    <p> Ingrese el tiempo medio de la ruta
+    <input type="time" id="tiempo" value="00:00:00" max="22:30:00" min="10:00:00" step="1">
+    </p> 
+    <div class="menu">
+      <button class="mid" {{action 'registrar'}}>Finalizar registro</button>
+      
+    </div>
+  </form>
+</body>
+{{outlet}}

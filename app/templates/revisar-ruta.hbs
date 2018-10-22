@@ -1,0 +1,44 @@
+<head>
+  <header class="header">
+    <h1> BusApp </h1>
+  </header>
+</head>
+<body bgcolor="#696969">
+  <div class="header">
+    <h2>Bienvenido Conductor</h2>
+  </div>
+
+  <div class="menu">
+  {{#link-to 'generar-reporte'}}
+      <strong class="der">Generar Reporte</strong>
+  {{/link-to}}
+
+  {{#link-to 'revisar-ruta'}}
+    <strong class="izq">Revisar Ruta</strong>
+  {{/link-to}}
+  </div>
+  <header class="header"></header>
+  <div class="menu">
+  
+    <header class="header">
+      <h1> Revisar Ruta </h1>
+    </header>
+
+    <strong class="mid">
+      Su ruta asignada es:
+    </strong>
+
+    <form class="form">
+        {{#each rutas as | ruta |}}
+            <div class="reporte">
+                <p class="header">{{ruta.nombre}}</p>
+                <p class="header">{{ruta.tiempomedio}}</p>     
+            </div>  
+            <p></p>
+        {{/each}}
+        <button class="mid" {{action 'mostrar'}}>Mostrar Rutas</button>
+    </form>
+  </div>
+    
+</body>
+{{outlet}}

@@ -1,0 +1,26 @@
+<head>
+  <header class="header">
+    <h1> BusApp </h1>
+  </header>
+</head>
+<body bgcolor="#696969">
+  <div class="header">
+    <h2>Bienvenido administrador</h2>
+  </div>
+
+  <div class="menu">
+  {{#link-to 'registrar-usuario'}}
+      <strong class="der">Registrar usuario</strong>
+  {{/link-to}}
+
+  {{#link-to 'editar-usuario'}}
+    <strong class="mid">Editar usuario</strong>
+  {{/link-to}}
+
+  {{#link-to 'eliminar-usuario'}}
+      <strong class="izq">Eliminar usuario</strong>
+  {{/link-to}}
+  </div>
+</body>
+
+{{outlet}}

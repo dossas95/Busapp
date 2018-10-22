@@ -1,17 +1,32 @@
 'use strict';
 
-module.exports = function(environment) {
-  var ENV = {
-      firebase: {
-        apiKey: 'xyz',
-        authDomain: 'busapp-35bb0.firebaseapp.com',
-        databaseURL: 'https://busapp-35bb0.firebaseio.com',
-        storageBucket: 'busapp-35bb0.appspot.com',
-      },
+module.exports = function (environment) {
+  let ENV = {
+    torii: {
+      sessionServiceName: 'session'
+    },
     modulePrefix: 'bus-app',
     environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      /*
+      apiKey: "AIzaSyA1df4j8hglkvJhXGeb3xvn1Vw7EBqApYg",
+      authDomain: "busapp-35bb0.firebaseapp.com",
+      databaseURL: "https://busapp-35bb0.firebaseio.com",
+      projectId: "busapp-35bb0",
+      storageBucket: "busapp-35bb0.appspot.com",
+      messagingSenderId: "826322664158"
+      
+     */
+      apiKey: "AIzaSyA4wH7HXNzGKQkapR-QPzsR5cpUfTejNxQ",
+      authDomain: "dcps-test-8426f.firebaseapp.com",
+      databaseURL: "https://dcps-test-8426f.firebaseio.com",
+      projectId: "dcps-test-8426f",
+      storageBucket: "dcps-test-8426f.appspot.com",
+      messagingSenderId: "814727370010"
+      
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

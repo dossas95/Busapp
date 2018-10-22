@@ -1,0 +1,70 @@
+<head>
+  <header class="header">
+    <h1> BusApp </h1>
+  </header>
+</head>
+<body bgcolor="#696969">
+  <div class="header">
+    <h2>Bienvenido Operador</h2>
+  </div>
+
+  <div class="menu">
+  
+  {{#link-to 'registrar-bus'}}
+      <strong class="der">Registrar bus</strong>
+  {{/link-to}}
+
+  {{#link-to 'editar-bus'}}
+    <strong class="mid">Editar bus</strong>
+  {{/link-to}}
+
+  {{#link-to 'eliminar-bus'}}
+      <strong class="izq">Eliminar bus</strong>
+  {{/link-to}}
+  
+  
+  {{#link-to 'registrar-ruta'}}
+      <strong class="mid">Registrar ruta</strong>
+  {{/link-to}}
+  
+  {{#link-to 'revisar-reporte'}}
+      <strong class="izq">Revisar Reporte</strong>
+  {{/link-to}}
+  
+  </div>
+    <header class="header">
+        <h1> Editar bus </h1>
+    </header>
+  <div class="header" id="inicio">
+    <p>Indique la placa del bus que desea usar</p>
+    <p>{{input type="text" class='campo' value=code}}</p>
+    <strong><button    class="mid" {{action 'wrongField'}} >Buscar bus</button>
+
+    </strong>
+  </div>
+  <div class="header">
+  </div>
+	<form id="editarBus" hidden=true>
+    {{#each placas as | placa|}}
+     
+    <br>
+    <p> 
+    <input class="campo" type="text" id="placa" value={{placa.placa}} disabled="true"  size="80">
+    </p>
+    <p> 
+    <input class="campo" type="text" id="marca"value={{placa.marca}} size="80">
+    </p> <p> 
+  <input class="campo" type="text" id="modelo" value={{placa.modelo}} size="80">
+    </p>
+    
+    <p>Seleccione la fecha de la última revisión
+      <input class="campo" type="date" id="fr" value={{placa.fechaRevision}}></p>
+    <div class="menu">
+      <button class="mid" {{action 'finaled'}}>Finalizar registro</button>
+      
+    </div>
+  
+  {{/each}}
+  </form>
+</body>
+{{outlet}}

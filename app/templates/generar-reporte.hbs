@@ -1,0 +1,33 @@
+<head>
+  <header class="header">
+    <h1> BusApp </h1>
+  </header>
+</head>
+<body bgcolor="#696969">
+  <div class="header">
+    <h2>Bienvenido Conductor</h2>
+  </div>
+
+  <div class="menu">
+  {{#link-to 'generar-reporte'}}
+      <strong class="der">Generar Reporte</strong>
+  {{/link-to}}
+   
+  {{#link-to 'revisar-ruta'}}
+    <strong class="mid">Revisar Ruta</strong>
+  {{/link-to}}
+
+  </div>
+  <header class="header">
+    <h1> Generar Reporte </h1>
+  </header>
+  <div class="menu">
+    <strong class="mid">Descripción</strong>
+    <p></p>
+    <textarea rows="20" cols="80" class="cuadroTexto" id="cuadroTexto"></textarea>
+    <p></p>
+    <button class="mid" {{action 'generar'}}>Enviar</button>
+  </div>
+  
+</body>
+{{outlet}}
